@@ -24,8 +24,8 @@ public class CentralTIU {
 	public static final int UTENTE_EM_ALUGUER = TROTINETE_INDISPONIVEL + 1;
 
 	public CentralTIU() {
-		this.trotinetesMap = new HashMap<String, Trotinete>();
-		this.utenteMap = new HashMap<String, Utente>();
+		trotinetesMap = new HashMap<String, Trotinete>();
+		utenteMap = new HashMap<String, Utente>();
 	}
 
 	public void addTrotinetesMap(String codigo, Trotinete t) {								//Adiciona ao HashMap uma trotinete com o respetivo código
@@ -97,4 +97,5 @@ public class CentralTIU {
 		aluguer.terminar();																					//Se não tiver em andamento termina o aluguer
 		return OK;
 	}	
+
 }
