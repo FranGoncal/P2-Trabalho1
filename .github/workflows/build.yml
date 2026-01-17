@@ -30,6 +30,10 @@ jobs:
           for /R tiu %%f in (*.java) do javac -d out "%%f"
         shell: cmd
 
+      - name: Check compiled files
+        run: dir out /s
+        shell: cmd
+
       - name: Run SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
@@ -39,5 +43,6 @@ jobs:
           extraProperties: |
             sonar.projectKey=MyJavaProject
             sonar.projectName=My Java Project
+            sonar.sources=tiu
             sonar.java.binaries=out
             sonar.java.source=17
