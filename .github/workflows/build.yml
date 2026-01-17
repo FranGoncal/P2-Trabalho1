@@ -40,9 +40,9 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           projectBaseDir: '.'
-          extraProperties: |
-            sonar.projectKey=MyJavaProject
-            sonar.projectName=My Java Project
-            sonar.sources=tiu
-            sonar.java.binaries=out
-            sonar.java.source=17
+          args: >
+            -Dsonar.projectKey=FranGoncal_P2-Trabalho1
+            -Dsonar.projectName="P2-Trabalho1"
+            -Dsonar.sources=tiu
+            -Dsonar.java.binaries=out
+            -Dsonar.java.source=17
