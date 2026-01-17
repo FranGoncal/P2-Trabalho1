@@ -26,8 +26,9 @@ jobs:
 
       - name: Compile Java files
         run: |
-          mkdir -p out
-          javac -d out $(find . -name "*.java")
+          if not exist out mkdir out
+          for /R %%f in (*.java) do javac -d out "%%f"
+        shell: cmd
 
       - name: Run SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
